@@ -44,7 +44,7 @@ function test(): void {
 }
 
 let valueVoid: void = 100; // 不能将类型“number”分配给类型“void”
-let valueVoid1: void = undefined;
+let valueVoid1: void = undefined; // 可以将undefined赋值给void类型
 
 /***
  * Null与Undefined类型
@@ -52,6 +52,22 @@ let valueVoid1: void = undefined;
 let nullValue: null = null;
 let undefinedValue: undefined = undefined;
 
-let objectValue: Object = {};
-objectValue.name = 'lala';
-console.log(objectValue.name);
+// undefined 和 null 是所有类型的子类型。也就是说 undefined 类型的变量，可以赋值给 number 类型的变量
+let testNum: number = undefined;
+let testStr: string = null;
+
+
+/***
+ * Never类型
+ * never 类型表示的是那些永不存在的值的类型。 例如，never 类型是那些总是会抛出异常或根本就不会有返回值的函数表达式或箭头函数表达式的返回值类型。
+ * ***/
+// 返回never的函数必须存在无法达到的终点
+function error(message: string): never {
+  throw new Error(message);
+}
+
+function infiniteLoop(): never {
+  while (true) {}
+}
+// 在 TypeScript 中，可以利用 never 类型的特性来实现全面性检查
+// 链接：https://s3.ax1x.com/2021/03/01/6i4Mss.png
