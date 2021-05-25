@@ -15,3 +15,5 @@ function testOne(valueTest: string | number): string {
   return valueTest.toString();
 }
 // 共有属性调用没有问题
+
+type Name = 'lee' | 'haha' | 'lala';
