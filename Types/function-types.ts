@@ -41,3 +41,15 @@ function reverse(x: number | string): number | string | void {
 }
 
 // 这样当你输入的数字时，反转后输出的还是数字，字符串反转后还是字符串。
+
+interface Person {
+  name: string;
+  age: number;
+  height?: number
+}
+
+function testFunc(obj: Person) {
+  console.log(obj);
+}
+
+testFunc({name: 'lee', age: 24});
